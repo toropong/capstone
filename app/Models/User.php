@@ -51,4 +51,3 @@ class User extends Authenticatable
         'user_level' => 'integer',
     ];
 }
-//a
