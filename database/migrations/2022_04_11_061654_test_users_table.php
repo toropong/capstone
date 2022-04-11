@@ -28,7 +28,7 @@ class TestUsersTable extends Migration
         //     'user_level' => 0,
         //     'password' => hash('sha256', "TestPassword"),
         // ]);
-        User::create([
+       User::create([
             'name' => "TestName",
             'user_id' => "TestID",
             'age' => "Ages",
@@ -44,6 +44,6 @@ class TestUsersTable extends Migration
      */
     public function down()
     {
-        //
+        User::where('user_id', "TestID")->delete();
     }
 }
