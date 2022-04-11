@@ -11,8 +11,7 @@
         <!-- Bootstrap icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="resources/css/main.css" rel="stylesheet" >
-        <link href="resources/css/bootstrap.css" rel="stylesheet">
+        <link href="/resources/css/main.css" rel="stylesheet" >
     </head>
     <body class="d-flex flex-column h-100">
         <main class="flex-shrink-0">
