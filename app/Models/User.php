@@ -12,6 +12,11 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    //굳이 명시 안해도 기본값임
+    public $incrementing = true;
+    public $timestamps = true;
+    protected $table = 'users';
+
     /**
      * The attributes that are mass assignable.
      *
@@ -19,7 +24,10 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
-        'email',
+        'user_id',
+        'age',
+        'user_level',
+        //'email',
         'password',
     ];
 
@@ -39,7 +47,8 @@ class User extends Authenticatable
      * @var array<string, string>
      */
     protected $casts = [
-        'email_verified_at' => 'datetime',
+        //'email_verified_at' => 'datetime',
+        'user_level' => 'integer',
     ];
 }
 //a
