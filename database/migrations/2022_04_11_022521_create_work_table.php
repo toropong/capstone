@@ -15,9 +15,15 @@ class CreateWorkTable extends Migration
     {
         Schema::create('work', function (Blueprint $table) {
             $table->id('no');
-            $table->string('year')->default('')->unique();//년도
-            $table->string('title')->default('');//제목
-            $table->string('cont')->default('');//내용글
+            $table->string('year')
+                ->default('')
+                ->comment("년도");
+            $table->string('title')
+                ->default('')
+                ->comment("제목");
+            $table->string('cont')
+                ->default('')
+                ->comment("내용글");
             $table->rememberToken();
             $table->timestamps();
         });

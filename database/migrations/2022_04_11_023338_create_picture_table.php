@@ -14,9 +14,18 @@ class CreatePictureTable extends Migration
     public function up()
     {
         Schema::create('picture', function (Blueprint $table) {
-            $table->unsignedBigInteger('pic_no');
-            $table->foreign('pic_no')->references('no')->on('work');
-            $table->string('year')->default('')->unique();//년도
+            $table->id();
+            $table->unsignedBigInteger('work_no');
+            $table->foreign('work_no')
+                ->references('no')
+                ->on('work')
+                ->cascadeOnDelete()
+                ->cascadeOnUpdate();
+            $table->string('year')
+                ->default('')
+                ->comment("년도");
+            $table->string('file_path')
+                ->comment("파일경로");
             $table->timestamps();
         });
     }
