@@ -25,28 +25,28 @@ function enterkey(){
 function login_message(){
 
 
-    var a = document.getElementById("login_id");
-    var b = document.getElementById("login_pw");
+    var login_id = document.getElementById("login_id");
+    var login_pw = document.getElementById("login_pw");
 
-    if((a.value)==""){
+    if((login_id.value)==""){
         $('#login_blank').text("Id를 입력해주새요.");
         $('#login_blank').css('color','red');
         $("#login_id").focus();
         return false;
     }
-    else if((!((b.value)==""))&&((a.value)=="")){
+    else if((!((login_pw.value)==""))&&((login_id.value)=="")){
         document.getElementById('login_blank1').style.display="none";
         console.log(1);
     }
-    if((b.value)==""){
+    if((login_pw.value)==""){
         $('#login_blank1').text("Password를 입력해주새요.");
         $('#login_blank1').css('color','red');
         $("#login_pw").focus();
         return false;
     }
    
-    var login_id= $('#login_id').val();
-    var login_pw= $('#login_pw').val();
+    var logindata_id= $('#login_id').val();
+    var logindata_pw= $('#login_pw').val();
    
     $.ajax({
 
@@ -54,8 +54,8 @@ type: 'post',
 url: '',
 dataType: 'json',
 data:{
-  "" : login_id,  //input_id는 key값 컨트롤러에서 사용되는 값, login_id는 value값 var login_id로 선언된 값
-  "" : login_pw
+  "" : logindata_id,  //input_id는 key값 컨트롤러에서 사용되는 값, login_id는 value값 var login_id로 선언된 값
+  "" : logindata_pw
 },
 
 
