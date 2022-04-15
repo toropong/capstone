@@ -6,6 +6,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WorkController;
+use App\Http\Controllers\IndexController;
+use App\Http\Controllers\MainController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\ManageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,13 +23,14 @@ use App\Http\Controllers\WorkController;
 */
 
 
-Route::get('/', function () {
-    return view('index');
-});
-Route::get('/main', function () {
-    return view('main');
-});
-Route::get('/login', function () {
-    return view('login');
-});
+Route::get('/', [IndexController::class, 'view'])->name('index');
+
+Route::get('/main', [MainController::class, 'view'])->name('main');
+
+Route::get('/login', [LoginController::class, 'view'])->name('login');
+Route::post('/login', [LoginController::class, 'login']);
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+
+Route::get('/manage', [ManageController::class, 'view'])->name('manage');
+
 // Route::get('/', [UserController::class, 'main']);
