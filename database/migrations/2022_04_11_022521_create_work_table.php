@@ -24,7 +24,6 @@ class CreateWorkTable extends Migration
             $table->string('cont')
                 ->default('')
                 ->comment("내용글");
-            $table->rememberToken();
             $table->timestamps();
         });
     }
