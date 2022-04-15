@@ -13,6 +13,7 @@
                         <li><a class="dropdown-item" href="/work/{{ $work->year }}">{{ $work->year }} 학년도</a></li>
 @endforeach
                     </ul>
+                </li>
 @auth
                 <li class="nav-item"><a class="nav-link" href="{{ route('logout') }}">로그아웃</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ route('manage') }}">관리자 페이지</a></li>
