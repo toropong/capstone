@@ -18,33 +18,7 @@
 <body class="d-flex flex-column h-100">
     <main class="flex-shrink-0">
         <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container px-5">
-                <a class="navbar-brand" href="main">중부대학교 졸업 작품</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="main">홈</a></li>
-                        <li class="nav-item"><a class="nav-link" href="intro.php">행사 소개</a></li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdownBlog" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">작품 리스트</a>
-                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownBlog">
-                                <li><a class="dropdown-item" href="list-2021.php">2021 학년도</a></li>
-                                <li><a class="dropdown-item" href="list-2020.php">2020 학년도</a></li>
-                                <li><a class="dropdown-item" href="list-2019.php">2019 학년도</a></li>
-                                <li><a class="dropdown-item" href="list-2018.php">2018 학년도</a></li>
-                                <li><a class="dropdown-item" href="list-2017.php">2017 학년도</a></li>
-                            </ul>
-@auth
-                        <li class="nav-item"><a class="nav-link" href="{{ route('logout') }}">로그아웃</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{{ route('manage') }}">관리자 페이지</a></li>
-@else
-                        <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">로그인</a></li>
-@endif
-                    </ul>
-                </div>
-            </div>
-        </nav>
+@include('layouts.navigation')
         <!-- Header-->
         <header class="bg-dark py-5">
             <div class="container px-5">

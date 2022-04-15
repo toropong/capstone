@@ -22,7 +22,7 @@
 
             if (logindata_id == "") {
                 $('#login_blank')
-                    .text("Id를 입력해주새요.")
+                    .text("ID를 입력해주새요.")
                     .css('color', 'red');
                 login_id.focus();
                 return false;
