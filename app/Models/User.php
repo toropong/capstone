@@ -27,7 +27,7 @@ class User extends Authenticatable
         'user_id',
         'age',
         'user_level',
-        //'email',
+        'email',
         'password',
     ];
 

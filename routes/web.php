@@ -1,11 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
-
-use App\Http\Controllers;
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\WorkController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\LoginController;

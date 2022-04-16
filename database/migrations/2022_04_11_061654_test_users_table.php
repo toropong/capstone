@@ -31,6 +31,7 @@ class TestUsersTable extends Migration
             'user_id' => "testid",
             'age' => "Ages",
             'user_level' => 0,
+            'email' => "a@b.c",
             'password' => Hash::make("testpassword"),
         ]);
     }

@@ -22,4 +22,9 @@ class Work extends Model
         'title',
         'cont',
     ];
+
+    public function getYears()
+    {
+        return array_column(self::select('year')->distinct()->orderby('year', 'desc')->get()->toArray(), 'year');
+    }
 }
