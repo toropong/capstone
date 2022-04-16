@@ -18,6 +18,7 @@ class CreateUsersTable extends Migration
             $table->string('name')->comment('이름');
             $table->string('user_id')->unique()->comment('아이디');
             $table->string('age')->comment('나이');
+            $table->string('email')->comment('이메일');
             $table->unsignedSmallInteger('user_level')->comment('권한'); 
             $table->string('password')->comment('비밀번호');
             $table->rememberToken();
