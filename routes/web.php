@@ -34,3 +34,6 @@ Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('/manage', [ManageController::class, 'view'])->name('manage');
 
 // Route::get('/', [UserController::class, 'main']);
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
