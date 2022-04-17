@@ -24,13 +24,23 @@ Route::get('/', [IndexController::class, 'view'])->name('index');
 
 Route::get('/main', [MainController::class, 'view'])->name('main');
 
-Route::get('/login', [LoginController::class, 'view'])->name('login');
-Route::post('/login', [LoginController::class, 'login']);
-Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+// Route::get('/login', [LoginController::class, 'view'])->name('login');
+// Route::post('/login', [LoginController::class, 'login']);
+// Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::get('/manage', [ManageController::class, 'view'])->name('manage');
 
-// Route::get('/', [UserController::class, 'main']);
-Auth::routes();
+/**
+ * Auth의 라우팅 기능들 중 필요한것만 가져옵니다.
+ * @see Laravel\Ui\AuthRouteMethods @auth
+ */
+Auth::routes([
+    'login' => true,
+    'logout' => true,
+    'register' => false,
+    'reset' => false,
+    'confirm' => false,
+    'verify' => false,
+]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
