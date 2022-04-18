@@ -24,6 +24,9 @@ Route::get('/', [IndexController::class, 'view'])->name('index');
 
 Route::get('/main', [MainController::class, 'index'])->name('main');
 
+Route::post('/update', [MainController::class, 'update']);
+
+
 // Route::get('/login', [LoginController::class, 'view'])->name('login');
 // Route::post('/login', [LoginController::class, 'login']);
 // Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
