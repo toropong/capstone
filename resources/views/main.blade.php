@@ -33,7 +33,7 @@
                                 </div> -->
                         </div>
                     </div>
-                    <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center"><img class="img-fluid rounded-3 my-5" src="https://dummyimage.com/600x400/343a40/6c757d" alt="..." /></div>
+                    <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center"><img class="img-fluid rounded-3 my-5" src="https://ww.namu.la/s/ce61692e8398840b7a63a6e8cb704db05a39353323e4af78ea58ea302889d677c2b9b7b1592d99c96ab73fc59ecfa5875771a550cb14dfe307eb6ab2012e190496da0289399f0ef0c1aa655f9e37db49b362829a8efd3cd6f3813da7b97b35e7" width="250" height="250"alt="..." /></div>
                 </div>
             </div>
         </header>
@@ -42,29 +42,29 @@
             <div class="container px-5 my-5">
                 <div class="row gx-5">
                     <div class="col-lg-4 mb-5 mb-lg-0">
-                        <h2 class="fw-bolder mb-0">A better way to start building.</h2>
+                        <h2 class="fw-bolder mb-0"><br><br><br>중부대학교<br>소프트웨어공학부<br>교류 공간</h2>
                     </div>
                     <div class="col-lg-8">
                         <div class="row gx-5 row-cols-1 row-cols-md-2">
                             <div class="col mb-5 h-100">
                                 <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-collection"></i></div>
-                                <h2 class="h5">Featured title</h2>
-                                <p class="mb-0">Paragraph of text beneath the heading to explain the heading. Here is just a bit more text.</p>
+                                <h2 class="h5">사이트 소개</h2>
+                                <p class="mb-0">중부대학교 학과생들간의 실력 향상을 위한 졸업작품 사이트</p>
                             </div>
                             <div class="col mb-5 h-100">
                                 <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-building"></i></div>
-                                <h2 class="h5">Featured title</h2>
-                                <p class="mb-0">Paragraph of text beneath the heading to explain the heading. Here is just a bit more text.</p>
+                                <h2 class="h5">학과 위치</h2>
+                                <p class="mb-0">중부대학교 세종관 5층</p>
                             </div>
                             <div class="col mb-5 mb-md-0 h-100">
                                 <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-toggles2"></i></div>
-                                <h2 class="h5">Featured title</h2>
-                                <p class="mb-0">Paragraph of text beneath the heading to explain the heading. Here is just a bit more text.</p>
+                                <h2 class="h5">개최 일시</h2>
+                                <p class="mb-0">2022.00.00(월) - 2022.00.00(수)</p>
                             </div>
                             <div class="col h-100">
                                 <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-toggles2"></i></div>
-                                <h2 class="h5">Featured title</h2>
-                                <p class="mb-0">Paragraph of text beneath the heading to explain the heading. Here is just a bit more text.</p>
+                                <h2 class="h5">문의</h2>
+                                <p class="mb-0">031-8075-1229</p>
                             </div>
                         </div>
                     </div>
@@ -72,7 +72,7 @@
             </div>
         </section>
         <!-- Testimonial section-->
-        <div class="py-5 bg-light">
+        <!-- <div class="py-5 bg-light">
             <div class="container px-5 my-5">
                 <div class="row gx-5 justify-content-center">
                     <div class="col-lg-10 col-xl-7">
@@ -90,9 +90,9 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- Blog preview section-->
-        <section class="py-5">
+        <!-- <section class="py-5">
             <div class="container px-5 my-5">
                 <div class="row gx-5 justify-content-center">
                     <div class="col-lg-8 col-xl-6">
@@ -172,9 +172,9 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <!-- Call to action-->
-                <aside class="bg-primary bg-gradient rounded-3 p-4 p-sm-5 mt-5">
+                <!-- <aside class="bg-primary bg-gradient rounded-3 p-4 p-sm-5 mt-5">
                     <div class="d-flex align-items-center justify-content-between flex-column flex-xl-row text-center text-xl-start">
                         <div class="mb-4 mb-xl-0">
                             <div class="fs-3 fw-bold text-white">New products, delivered to you.</div>
@@ -188,7 +188,7 @@
                             <div class="small text-white-50">We care about privacy, and will never share your data.</div>
                         </div>
                     </div>
-                </aside>
+                </aside> -->
             </div>
         </section>
     </main>
