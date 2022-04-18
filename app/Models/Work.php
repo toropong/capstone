@@ -11,6 +11,7 @@ class Work extends Model
 
     public $incrementing = true;
     protected $table = 'work';
+    protected $primaryKey = 'no';
 
     /**
      * The attributes that are mass assignable.

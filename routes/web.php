@@ -22,7 +22,7 @@ use App\Http\Controllers\ManageController;
 
 Route::get('/', [IndexController::class, 'view'])->name('index');
 
-Route::get('/main', [MainController::class, 'view'])->name('main');
+Route::get('/main', [MainController::class, 'index'])->name('main');
 
 // Route::get('/login', [LoginController::class, 'view'])->name('login');
 // Route::post('/login', [LoginController::class, 'login']);

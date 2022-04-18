@@ -11,6 +11,7 @@ class Picture extends Model
 
     public $incrementing = true;
     protected $table = 'picture';
+    protected $primaryKey = 'id';
 
     /**
      * The attributes that are mass assignable.
