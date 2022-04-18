@@ -48,5 +48,20 @@ class WorkSeeder extends Seeder
             'title' => "테스트6",
             'cont' => "IMTESTING20220415",
         ]);
+        Work::create([
+            'year' => "1986",
+            'title' => "테스트7",
+            'cont' => "IMTESTING20220415",
+        ]);
+        Work::create([
+            'year' => "1986",
+            'title' => "테스트8",
+            'cont' => "IMTESTING20220415",
+        ]);
+        Work::create([
+            'year' => "1986",
+            'title' => "테스트9",
+            'cont' => "IMTESTING20220415",
+        ]);
     }
 }

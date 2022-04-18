@@ -7,6 +7,7 @@ use App\Http\Controllers\IndexController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ManageController;
+use App\Http\Controllers\WorkController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,18 +21,18 @@ use App\Http\Controllers\ManageController;
 */
 
 
-Route::get('/', [IndexController::class, 'view'])->name('index');
+Route::get('/', [IndexController::class, 'index'])->name('index');
 
 Route::get('/main', [MainController::class, 'index'])->name('main');
 
 Route::post('/update', [MainController::class, 'update']);
 
 
-// Route::get('/login', [LoginController::class, 'view'])->name('login');
-// Route::post('/login', [LoginController::class, 'login']);
-// Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+//년도에 따른 작품 목록 표시
+Route::get('/work/{year}', [WorkController::class, 'index'])->name('work');
 
-Route::get('/manage', [ManageController::class, 'view'])->name('manage');
+//관리자 페이지
+Route::get('/manage', [ManageController::class, 'index'])->name('manage');
 
 /**
  * Auth의 라우팅 기능들 중 필요한것만 가져옵니다.

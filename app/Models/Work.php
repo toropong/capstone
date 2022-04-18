@@ -24,8 +24,18 @@ class Work extends Model
         'cont',
     ];
 
-    public function getYears()
+    public static function getYears()
     {
         return array_column(self::select('year')->distinct()->orderby('year', 'desc')->get()->toArray(), 'year');
+    }
+
+    public static function getWorksFromYear($year)
+    {
+        return self::where('year', $year)->get();
+    }
+
+    public function getID()
+    {
+        return $this->no;
     }
 }

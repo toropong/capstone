@@ -10,7 +10,7 @@
                     <a class="nav-link dropdown-toggle" id="navbarDropdownBlog" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">작품 리스트</a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownBlog">
 @foreach (App\Models\Work::getYears() as $year)
-                        <li><a class="dropdown-item" href="/work/{{ $year }}">{{ $year }} 학년도</a></li>
+                        <li><a class="dropdown-item" href="{{ route('work', ['year'=>$year]) }}">{{ $year }} 학년도</a></li>
 @endforeach
                     </ul>
                 </li>

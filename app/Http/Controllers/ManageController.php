@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class ManageController extends Controller
 {
-    public function view()
+    public function index()
     {
         return redirect()->route('main');
     }
