@@ -34,6 +34,9 @@ Route::get('/work/{year}', [WorkController::class, 'index'])->name('work');
 //관리자 페이지
 Route::get('/manage', [ManageController::class, 'index'])->name('manage');
 
+Route::get('/product', function () {
+    return view('product');
+  });
 /**
  * Auth의 라우팅 기능들 중 필요한것만 가져옵니다.
  * @see Laravel\Ui\AuthRouteMethods @auth
