@@ -24,7 +24,7 @@ class AuthRouteMethods
 
                 // Logout Routes...
                 if ($options['logout'] ?? true) {
-                    $this->post('logout', 'Auth\LoginController@logout')->name('logout');
+                    $this->match(['get','post'], '/logout', 'Auth\LoginController@logout')->name('logout');
                 }
 
                 // Registration Routes...
