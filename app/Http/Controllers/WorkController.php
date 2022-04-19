@@ -25,6 +25,11 @@ class WorkController extends Controller
         return view('work', ['work' => $work, 'year' => $year]);
     }
 
+    public function product(Work $work)
+    {
+        return view('work', ['work' => $work]);
+    }
+
     public function getWorksFromYear($year)
     {
         $works = Work::getWorksFromYear($year);

@@ -10,7 +10,7 @@
         @section('title', $year . ' 학년도 작품목록')
         @foreach ($works as $index => $work)
         <p>
-            <a href="{{ route('work.product', ['year' => $work->year, 'sequence' => (++$index)]) }}">
+            <a href="{{ route('product', ['work' => $work->getID() ]) }}">
                 <span>{{ $work->title }}</span>
             </a>
             <span>{{ $work->cont }}</span>
