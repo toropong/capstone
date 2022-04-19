@@ -27,8 +27,8 @@
 </head>
 <body>
     <main class="flex-shrink-0">
-@hasSection('navigation')
         <!-- Navigation-->
+@hasSection('navigation')
         @yield('navigation')
 @else
 @include('layouts.navigation')
