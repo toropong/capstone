@@ -55,6 +55,6 @@ Auth::routes([
   'logout' => true,
   'register' => false,
   'reset' => false,
-  'confirm' => false,
+  'confirm' => true,
   'verify' => false,
 ]);
