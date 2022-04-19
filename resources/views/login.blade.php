@@ -38,7 +38,7 @@
 
         if (logindata_id == "") {
             $('#login_blank')
-                .text("ID를 입력해주새요.")
+                .text("ID를 입력해주세요.")
                 .css('color', 'red');
             login_id.focus();
             return false;
@@ -48,7 +48,7 @@
         }
         if (logindata_pw == "") {
             $('#login_blank1')
-                .text("Password를 입력해주새요.")
+                .text("Password를 입력해주세요.")
                 .css('color', 'red');
             login_pw.focus();
             return false;
