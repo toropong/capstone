@@ -17,7 +17,7 @@
 
 <body class="d-flex flex-column h-100">
     <main class="flex-shrink-0">
-        <!-- Navigation-->
+        <!-- Navigation--> 
 @include('layouts.navigation')
         <!-- Header-->
         <header class="bg-dark py-5">
@@ -200,7 +200,7 @@
                     <div class="small m-0 text-white">Copyright &copy; Your Website 2022</div>
                 </div>
                 <div class="col-auto">
-                    <a class="link-light small" href="#!">Privacy</a>
+                    <a class="link-light small" href="/manage/register">등록하기</a>
                     <span class="text-white mx-1">&middot;</span>
                     <a class="link-light small" href="#!">Terms</a>
                     <span class="text-white mx-1">&middot;</span>

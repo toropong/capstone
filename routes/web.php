@@ -36,6 +36,10 @@ Route::get('/work/{year}/{sequence}', [WorkController::class, 'showProduct'])->n
 // 관리자 페이지
 Route::get('/manage', [ManageController::class, 'index'])->name('manage');
 
+//작품 등록
+Route::get('/manage/register', [ManageController::class, 'index']);
+Route::post('/manage/update/{no}', [ManageController::class, 'update']);
+
 Route::get('/product', function () {
   return view('product');
 });
