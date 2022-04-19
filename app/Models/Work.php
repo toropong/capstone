@@ -31,7 +31,7 @@ class Work extends Model
 
     public static function getWorksFromYear($year)
     {
-        return self::where('year', $year)->get();
+        return self::where('year', $year)->orderBy("created_at","desc")->get();
     }
 
     public function getID()

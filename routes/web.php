@@ -32,6 +32,8 @@ Route::post('/update', [MainController::class, 'update']);
 Route::get('/work/{year}', [WorkController::class, 'index'])->name('work');
 // 작품 순서에 따른 작품 상세정보 표시
 Route::get('/work/{year}/{sequence}', [WorkController::class, 'showProduct'])->name('work.product');
+// 작품 ID(no)에 따른 작품 상세정보 표시
+Route::get('/product/{work}', [WorkController::class, 'product'])->name('product');
 
 // 관리자 페이지
 Route::get('/manage', [ManageController::class, 'index'])->name('manage');
