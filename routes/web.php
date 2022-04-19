@@ -28,25 +28,27 @@ Route::get('/main', [MainController::class, 'index'])->name('main');
 Route::post('/update', [MainController::class, 'update']);
 
 
-//년도에 따른 작품 목록 표시
+// 년도에 따른 작품 목록 표시
 Route::get('/work/{year}', [WorkController::class, 'index'])->name('work');
+// 작품 순서에 따른 작품 상세정보 표시
+Route::get('/work/{year}/{sequence}', [WorkController::class, 'showProduct'])->name('work.product');
 
-//관리자 페이지
+// 관리자 페이지
 Route::get('/manage', [ManageController::class, 'index'])->name('manage');
 
 Route::get('/product', function () {
-    return view('product');
-  });
+  return view('product');
+});
+
 /**
  * Auth의 라우팅 기능들 중 필요한것만 가져옵니다.
  * @see Laravel\Ui\AuthRouteMethods @auth
  */
 Auth::routes([
-    'login' => true,
-    'logout' => true,
-    'register' => false,
-    'reset' => false,
-    'confirm' => false,
-    'verify' => false,
+  'login' => true,
+  'logout' => true,
+  'register' => false,
+  'reset' => false,
+  'confirm' => false,
+  'verify' => false,
 ]);
-
