@@ -47,5 +47,7 @@ class ManageController extends Controller
         }
     
         return response($result);
+    // $data = DB::table('picture')
+    // ->select('*')->get();
     }
 }

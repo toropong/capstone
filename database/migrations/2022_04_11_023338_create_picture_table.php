@@ -21,7 +21,7 @@ class CreatePictureTable extends Migration
                 ->on('work')
                 ->cascadeOnDelete()
                 ->cascadeOnUpdate();
-            $table->string('year')
+            $table->string('picture_year')
                 ->default('')
                 ->comment("년도");
             $table->string('file_path')

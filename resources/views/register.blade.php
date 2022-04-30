@@ -6,11 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>등록</title>
-    <link href="css/image.css" rel="stylesheet" />
+    <link href="/css/style.css" rel="stylesheet" />
+    <link href="/css/image.css" rel="stylesheet"/>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
 </head>
 <body>
-<form action="/update" method="POST"  class="qwe" name="worksform" id="worksform" >
+  {{-- @foreach ($result as $result1) --}}
+  <div class="container-wrap">
+    <div class="container-wrapping">
+      <div class="image">
+        <div class="image-in">
+<form action="/manage/update/{no}" method="POST"  class="qwe" name="worksform" id="worksform" accept-charset="utf-8" enctype="multipart/form-data" onsubmit="return check();" >
     {{csrf_field()}}
     <input type="hidden" name="no" id="no" value="">
     <div class="a">
@@ -18,17 +24,19 @@
         <div class="input-group"> <span> </span>
             <input type="text" name="title" value="" id="title" placeholder="작품명">
         </div>
+        <div class="title_blank" id="title_blank"></div>
     </div>
     <div class="b">
         <label for="inputLastName1" class="form-label">내용</label>
         <div>
         <textarea name="cont" value="" id="cont"></textarea>
         </div>
+        <div class="content_blank" id="content_blank"></div>
     </div>
         <div class="preview-wrap">
             <div class="preview-left">
               <div class="preview">
-                <img src="" onerror="this.src=''" id="image-session">
+                <img src="" onerror="this.src='imglib/noimage.png'" id="image-session">
                 <div class="preview-image">
                   <!-- 이미지 미리보기 -->
                 </div>
@@ -41,23 +49,30 @@
             </div>
         </div>
           </div>
+          {{-- @endforeach --}}
     <input type="file" onchange="checkFile(this);" id="real-input" name="picture" class="image_inputType_file" accept="image*/">
-    <div class="postbutton">
-        <input type="submit" name="" value="저장" id="save" >
-        <input type="button" value="창닫기"  id="close" onclick="window.close()">
-      </div>
+ 
     <div class="c">
         <select name="year">
             @foreach(App\Models\Work::getYears() as $year)
             <option> 
                 {{ $year }} 학년도
                 @endforeach
+                <div class="postbutton">
+                  <input type="submit" name="" value="저장" id="save" onclick="save_check()">
+                  <input type="button" value="창닫기"  id="close"  onclick="history.back()">
+                </div>
     </div>
-    <div class="btn-group">
+
+    {{-- <div class="btn-group">
     <input type="submit" value="작성" class="px-4 py-1 bg-green-500 hover:bg-green-700 text-lg text-white">
     <input type="button" value="취소" onclick="history.back()" class="px-4 py-1 ml-6 bg-red-500 hover:bg-red-700 text-lg text-white">
-    </div>
+    </div> --}}
 </form>
+  </div>
+  </div>
+    </div>
+  </div>
 </body>
 <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
 <script type="text/javascript">
@@ -112,6 +127,28 @@
         return false;
       }
     }
+    function save_check(){
+        var title = $('#title');
+        var content = $('#cont');
+        var title_cont = title.val();
+        var content_cont = content.val();
+
+        if (title_cont == "") {
+            $('#title_blank')
+                .text("제목을 입력해주세요.")
+                .css('color', 'red');
+            title_cont.focus();
+            return false;
+        } 
+        if (content_cont == "") {
+            $('#content_blank')
+                .text("내용을 입력해주세요.")
+                .css('color', 'red');
+            content_cont.focus();
+            return false;
+        
+    }
+  }
   </script>
 
 {{-- @section('javascript')
