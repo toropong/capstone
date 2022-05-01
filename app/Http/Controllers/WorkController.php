@@ -30,7 +30,7 @@ class WorkController extends Controller
         return view('work', ['work' => $work]);
     }
 
-    public function getWorksFromYear($year)
+    protected function getWorksFromYear($year)
     {
         $works = Work::getWorksFromYear($year);
         if ($works->count() <= 0) {

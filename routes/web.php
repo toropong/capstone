@@ -7,6 +7,7 @@ use App\Http\Controllers\IndexController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ManageController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\WorkController;
 
 /*
@@ -37,6 +38,13 @@ Route::get('/product/{work}', [WorkController::class, 'product'])->name('product
 
 // 관리자 페이지
 Route::get('/manage', [ManageController::class, 'index'])->name('manage');
+
+// 유저 정보 변경
+Route::middleware('password.confirm')->group(function () {
+  // 비밀번호 변경
+  Route::get('/password/change', [UserController::class, 'showPasswordChangeForm']);
+  Route::post('/password/change', [UserController::class, 'changePassword']);
+});
 
 //작품 등록
 Route::get('/manage/register', [ManageController::class, 'index']);

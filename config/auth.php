@@ -106,6 +106,7 @@ return [
     |
     */
 
+    // password.confirm 인증 지속시간(초)
     'password_timeout' => 10800,
 
 ];

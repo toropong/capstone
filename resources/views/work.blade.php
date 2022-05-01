@@ -1,3 +1,5 @@
+{{-- 실험용 임시 view 생성 --}}
+
 @extends('layouts.work')
 
 @section('section')
