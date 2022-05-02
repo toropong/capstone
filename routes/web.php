@@ -22,9 +22,9 @@ use App\Http\Controllers\WorkController;
 */
 
 
-Route::get('/', [IndexController::class, 'index'])->name('index');
+Route::get('/index', [IndexController::class, 'index'])->name('index');
 
-Route::get('/main', [MainController::class, 'index'])->name('main');
+Route::get('/', [MainController::class, 'index'])->name('main');
 
 Route::post('/update', [MainController::class, 'update']);
 
