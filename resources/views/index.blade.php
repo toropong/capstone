@@ -44,8 +44,12 @@
                             </div>
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="{{ route('product', ['work' => $work->getID()]) }}">작품 보기</a></div>
+                                <div class="text-center"><form class="remove" name="delete" action="/manage_remove{no}" method="POST"><a class="btn btn-outline-dark mt-auto" href="{{ route('product', ['work' => $work->getID()]) }}">작품 보기</a>
+                                    @auth<a class="btn btn-outline-dark mt-auto">작품 삭제</a></form>@endauth</div>
+                                
                             </div>
+                            
+
                         </div>
                     </div>
 @endforeach

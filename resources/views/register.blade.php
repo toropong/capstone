@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>등록</title>
-    <link href="/css/style.css" rel="stylesheet" />
+    {{-- <link href="/css/style.css" rel="stylesheet" /> --}}
     <link href="/css/image.css" rel="stylesheet"/>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
 </head>
@@ -16,6 +16,7 @@
     <div class="container-wrapping">
       <div class="image">
         <div class="image-in">
+          <div class="form-container">
 <form action="/manage/update/{no}" method="POST"  class="qwe" name="worksform" id="worksform" accept-charset="utf-8" enctype="multipart/form-data" onsubmit="return check();" >
     {{csrf_field()}}
     <input type="hidden" name="no" id="no" value="">
@@ -63,12 +64,8 @@
                   <input type="button" value="창닫기"  id="close"  onclick="history.back()">
                 </div>
     </div>
-
-    {{-- <div class="btn-group">
-    <input type="submit" value="작성" class="px-4 py-1 bg-green-500 hover:bg-green-700 text-lg text-white">
-    <input type="button" value="취소" onclick="history.back()" class="px-4 py-1 ml-6 bg-red-500 hover:bg-red-700 text-lg text-white">
-    </div> --}}
 </form>
+          </div>
   </div>
   </div>
     </div>
