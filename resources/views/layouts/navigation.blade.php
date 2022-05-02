@@ -55,7 +55,7 @@
                         <div class="preview-wrap">
                             <div class="preview-left">
                               <div class="preview">
-                                <img src="" onerror="this.src='imglib/noimage.png'" id="image-session">
+                                <img src="" onerror="this.src='/imglib/noimage.png'" id="image-session">
                                 <div class="preview-image">
                                   <!-- 이미지 미리보기 -->
                                 </div>
