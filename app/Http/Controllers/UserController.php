@@ -10,6 +10,7 @@ class UserController extends Controller
 {
     public function showPasswordChangeForm(Request $request)
     {
+        $request->file();
         return view('passwordchange');
     }
 
@@ -20,7 +21,7 @@ class UserController extends Controller
         $user->update([
             'password' => Hash::make($request->get('password')),
         ]);
-        return '<pre>' . json_encode([$user, $request->session()->all()], JSON_PRETTY_PRINT) . '</pre>';
+        return view('index');
     }
 
     protected function passwordValidation(Request $request)

@@ -66,8 +66,11 @@ return [
     |
     */
 
+    // php artisan storage:link
     'links' => [
-        public_path('storage') => storage_path('app/public'),
+        // public_path('storage') => storage_path('app/public'),
+        // Picture 파일 저장
+        public_path('pictures') => storage_path('app/public/pictures'),
     ],
 
 ];

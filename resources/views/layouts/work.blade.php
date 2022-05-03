@@ -49,7 +49,7 @@
     @yield('footer')
     @else
     <footer class="py-5 bg-dark">
-        <div class="container"><p class="m-0 text-center text-white">Copyright &copy; 게임소프트웨어학과 2022</p></div>
+        <div class="container"><p class="m-0 text-center text-white">Copyright &copy; 중부대학교 게임소프트웨어학과 2022</p></div>
     </footer>
     @endif
     <!-- Bootstrap core JS-->

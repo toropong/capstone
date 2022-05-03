@@ -24,8 +24,9 @@ class CreatePictureTable extends Migration
             $table->string('picture_year')
                 ->default('')
                 ->comment("년도");
-            $table->string('file_path')
-                ->comment("파일경로");
+            // 파일 경로는 Picture 모델에서 다룹니다
+            $table->string('file_name')
+                ->comment("파일이름");
             $table->timestamps();
         });
     }

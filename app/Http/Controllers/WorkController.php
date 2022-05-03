@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Picture;
 use Illuminate\Http\Request;
 use App\Models\Work;
 
@@ -22,12 +23,13 @@ class WorkController extends Controller
             return $this->notFound();
         }
         $work = $works[$sequence - 1];
-        return view('work', ['work' => $work, 'year' => $year]);
+        return $this->product($work);
     }
 
     public function product(Work $work)
     {
-        return view('work', ['work' => $work]);
+        $pictures = Picture::getPicturesFromWork($work);
+        return view('work', ['work' => $work, 'pictures' => $pictures]);
     }
 
     protected function getWorksFromYear($year)

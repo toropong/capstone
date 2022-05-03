@@ -5,10 +5,11 @@ use Illuminate\Support\Facades\Auth;
 
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\MainController;
-use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ManageController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WorkController;
+
+use App\Http\Controllers\PictureController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +22,30 @@ use App\Http\Controllers\WorkController;
 |
 */
 
+function test()
+{
+  // 년도에 따른 작품 목록 표시
+  Route::get('/work/{year}', [WorkController::class, 'index'])->name('work');
+  // 작품 순서에 따른 작품 상세정보 표시
+  Route::get('/work/{year}/{sequence}', [WorkController::class, 'showProduct'])->name('work.product');
+  // 작품 ID(no)에 따른 작품 상세정보 표시
+  Route::get('/product/{work}', [WorkController::class, 'product'])->name('product');
+
+  // 유저 정보 변경
+  Route::middleware('password.confirm')->group(function () {
+    // 비밀번호 변경
+    Route::get('/password/change', [UserController::class, 'showPasswordChangeForm']);
+    Route::post('/password/change', [UserController::class, 'changePassword']);
+  });
+
+  // Picture 모델 테스트용
+  Route::get('/picture/{work}', [PictureController::class, 'showForm']);
+  Route::post('/picture/{work}', [PictureController::class, 'processPicture']);
+
+  Route::get('/product', function () {
+    return view('product');
+  });
+}
 
 Route::get('/index', [IndexController::class, 'index'])->name('index');
 
@@ -28,31 +53,15 @@ Route::get('/', [MainController::class, 'index'])->name('main');
 
 Route::post('/update', [MainController::class, 'update']);
 
-
-// 년도에 따른 작품 목록 표시
-Route::get('/work/{year}', [WorkController::class, 'index'])->name('work');
-// 작품 순서에 따른 작품 상세정보 표시
-Route::get('/work/{year}/{sequence}', [WorkController::class, 'showProduct'])->name('work.product');
-// 작품 ID(no)에 따른 작품 상세정보 표시
-Route::get('/product/{work}', [WorkController::class, 'product'])->name('product');
-
 // 관리자 페이지
 Route::get('/manage', [ManageController::class, 'index'])->name('manage');
-
-// 유저 정보 변경
-Route::middleware('password.confirm')->group(function () {
-  // 비밀번호 변경
-  Route::get('/password/change', [UserController::class, 'showPasswordChangeForm']);
-  Route::post('/password/change', [UserController::class, 'changePassword']);
-});
 
 //작품 등록
 Route::get('/manage/register', [ManageController::class, 'index']);
 Route::post('/manage/update/{no}', [ManageController::class, 'update']);
 
-Route::get('/product', function () {
-  return view('product');
-});
+// 기능 테스트
+test();
 
 /**
  * Auth의 라우팅 기능들 중 필요한것만 가져옵니다.
