@@ -7,9 +7,9 @@
     <div class="container">
         @if (isset($work))
             @section('title', $work->title)
-            <pre>{{ json_encode($work, JSON_PRETTY_PRINT) }}</pre>
+            <pre>work {{ json_encode($work, JSON_PRETTY_PRINT) }}</pre>
             @if(isset($pictures))
-                <pre>{{ json_encode(App\Models\Picture::getPicturesFromWork($work), JSON_PRETTY_PRINT) }}</pre>
+                <pre>pictures {{ json_encode($work->getPictures(), JSON_PRETTY_PRINT) }}</pre>
             @endif
         @elseif (isset($works))
             @section('title', $year . ' 학년도 작품목록')

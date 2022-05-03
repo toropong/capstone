@@ -56,4 +56,13 @@ class Work extends Model
     {
         return $this[$this->primaryKey];
     }
+
+    /**
+     * 해당 work 에 대응하는 picture 들을 가져옵니다
+     * @return array<Picture>
+     */
+    public function getPictures()
+    {
+        return Picture::getPicturesFromWork($this);
+    }
 }

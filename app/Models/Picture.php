@@ -58,6 +58,7 @@ class Picture extends Model
 
     /**
      * 파일을 출력하는 /public 경로 입니다
+     * @return string
      */
     protected static function public_path()
     {
