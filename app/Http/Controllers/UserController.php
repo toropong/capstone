@@ -21,7 +21,8 @@ class UserController extends Controller
         $user->update([
             'password' => Hash::make($request->get('password')),
         ]);
-        return view('index');
+        // $request->session()->forget('auth.password_confirmed_at');
+        return redirect()->route('main');
     }
 
     protected function passwordValidation(Request $request)

@@ -8,9 +8,7 @@
         @if (isset($work))
             @section('title', $work->title)
             <pre>work {{ json_encode($work, JSON_PRETTY_PRINT) }}</pre>
-            @if(isset($pictures))
-                <pre>pictures {{ json_encode($work->getPictures(), JSON_PRETTY_PRINT) }}</pre>
-            @endif
+            <pre>pictures {{ json_encode($work->getPictures(), JSON_PRETTY_PRINT) }}</pre>
         @elseif (isset($works))
             @section('title', $year . ' 학년도 작품목록')
             @foreach ($works as $index => $work)

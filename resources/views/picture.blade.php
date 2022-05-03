@@ -5,13 +5,17 @@
 @section('section')
 <section class="py-5">
     <div class="container">
+        @if(session()->has('message'))
+        <p>{{ session()->get('message') }}</p>
+        @endif
         @if(isset($work))
         <pre>work {{ json_encode($work, JSON_PRETTY_PRINT) }}</pre>
+        <pre>pictures {{ json_encode($work->getPictures(), JSON_PRETTY_PRINT) }}</pre>
         @endif
         @if(isset($picture))
         {{-- post --}}
-        <pre>picture {{ json_encode($picture, JSON_PRETTY_PRINT) }}</pre>
-        @else
+        <pre>added {{ json_encode($picture, JSON_PRETTY_PRINT) }}</pre>
+        @endif
         {{-- get --}}
         {{-- file을 받기 위해서 enctype을 form-data로 설정해줘야 합니다 --}}
         <form method="POST" enctype="multipart/form-data">
@@ -23,7 +27,6 @@
         @error('picture')
             <p>{{ $message }}</p>
         @enderror
-        @endif
     </div>
 </section>
 @endsection

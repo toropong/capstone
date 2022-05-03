@@ -29,7 +29,12 @@ function test()
   // 작품 순서에 따른 작품 상세정보 표시
   Route::get('/work/{year}/{sequence}', [WorkController::class, 'showProduct'])->name('work.product');
   // 작품 ID(no)에 따른 작품 상세정보 표시
-  Route::get('/product/{work}', [WorkController::class, 'product'])->name('product');
+  // Route::get('/product/{work}', [WorkController::class, 'product'])->name('product');
+
+  // Picture 모델 테스트용
+  Route::get('/product/{work}', [PictureController::class, 'showForm'])->name('product');
+  Route::post('/product/{work}', [PictureController::class, 'processPicture']);
+  Route::match(['get', 'post'], '/picture/delete/{picture}', [PictureController::class, 'deletePicture']);
 
   // 유저 정보 변경
   Route::middleware('password.confirm')->group(function () {
@@ -37,10 +42,6 @@ function test()
     Route::get('/password/change', [UserController::class, 'showPasswordChangeForm']);
     Route::post('/password/change', [UserController::class, 'changePassword']);
   });
-
-  // Picture 모델 테스트용
-  Route::get('/picture/{work}', [PictureController::class, 'showForm']);
-  Route::post('/picture/{work}', [PictureController::class, 'processPicture']);
 
   Route::get('/product', function () {
     return view('product');
@@ -65,7 +66,8 @@ test();
 
 /**
  * Auth의 라우팅 기능들 중 필요한것만 가져옵니다.
- * @see Laravel\Ui\AuthRouteMethods @auth
+ * Laravel\Ui\AuthRouteMethods@auth
+ * @see Laravel\Ui\AuthRouteMethods
  */
 Auth::routes([
   'login' => true,

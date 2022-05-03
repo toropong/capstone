@@ -7,6 +7,7 @@ use App\Models\Picture;
 use App\Models\Work;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\MessageBag;
 use Illuminate\Validation\ValidationException;
 
 /**
@@ -29,7 +30,7 @@ class PictureController extends Controller
             $files = $request->file('picture');
             $pictures = array();
             foreach ($files as $file) {
-                $validator = Validator::make(array('file' => $file), ['file' => $this->rules()]);
+                $validator = Validator::make(['file' => $file], ['file' => $this->fileRules()]);
                 if ($validator->passes())
                     array_push($pictures, Picture::addPictureToWork($work, $file));
                 else
@@ -37,26 +38,30 @@ class PictureController extends Controller
                         'picture' => [trans($validator->errors()->first())],
                     ]);
             }
-            return view('picture', ['work' => $work, 'picture' => $pictures]);
+            return redirect()
+                ->route('product', ['work' => $work])
+                ->with('picture', $pictures)
+                ->with('message', 'Picture successfully added');
         } else {
             // 파일을 받지 않음
             return $this->showForm($work);
         }
     }
 
-    protected function makePicture($file, Work $work)
+    public function deletePicture(Picture $picture)
     {
-        if (is_array($file)) {
-            $arr = array();
-            foreach ($file as $f)
-                array_push($arr, $this->makePicture($f, $work));
-            return $arr;
+        $work = $picture->getWork();
+        if ($picture->delete()) {
+            return redirect()
+                ->route('product', ['work' => $work])
+                ->with('message', 'Picture successfully deleted');;
         } else {
-            return Picture::addPictureToWork($work, $file);
+            return $this->showForm($work)
+                ->with('message', 'Picture delete failed');
         }
     }
 
-    protected function rules()
+    protected function fileRules()
     {
         return ['image', 'max:2048']; // image/*, <=2MB
     }
