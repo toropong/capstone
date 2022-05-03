@@ -5,7 +5,7 @@
 @section('section')
 <section class="py-5">
     <div class="container">
-        @if (isset($work))
+        @isset($work)
             @section('title', $work->title)
             <pre>work {{ json_encode($work, JSON_PRETTY_PRINT) }}</pre>
             <pre>pictures {{ json_encode($work->getPictures(), JSON_PRETTY_PRINT) }}</pre>
@@ -19,7 +19,7 @@
                 <span>{{ $work->cont }}</span>
             </p>
             @endforeach
-        @endif
+        @endisset
     </div>
 </section>
 @endsection

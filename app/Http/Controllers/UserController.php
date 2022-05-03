@@ -10,7 +10,6 @@ class UserController extends Controller
 {
     public function showPasswordChangeForm(Request $request)
     {
-        $request->file();
         return view('passwordchange');
     }
 

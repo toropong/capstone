@@ -8,9 +8,6 @@
     
     <title>@yield('title', '게임소프트웨어학과 졸업 작품')</title>
 
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-    <link href="/css/main.css" rel="stylesheet">
-    <link href="/css/styles.css" rel="stylesheet" />
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <!-- Bootstrap icons-->

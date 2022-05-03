@@ -59,10 +59,27 @@ class Work extends Model
 
     /**
      * 해당 work 에 대응하는 picture 들을 가져옵니다
-     * @return array<Picture>
+     * @return mixed<Picture>
      */
     public function getPictures()
     {
         return Picture::getPicturesFromWork($this);
+    }
+
+    public function thumbnail()
+    {
+        // 첫번째 이미지를 가져옵니다
+        $picture = $this->getPictures()->first();
+        return $picture ? $picture->getPath() : '/imglib/noimage.png';
+    }
+
+    /**
+     * 해당 work 에 대응하는 picture 들을 제거합니다
+     */
+    public function deletePictures()
+    {
+        foreach ($this->getPictures() as $picture) {
+            $picture->delete();
+        }
     }
 }

@@ -2,6 +2,10 @@
 
 namespace App\Providers;
 
+use App\Models\Picture;
+use App\Models\Work;
+use App\Observers\PictureObserver;
+use App\Observers\WorkObserver;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -27,6 +31,7 @@ class EventServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        Work::observe(WorkObserver::class);
+        Picture::observe(PictureObserver::class);
     }
 }

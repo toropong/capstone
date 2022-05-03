@@ -32,6 +32,12 @@ class WorkController extends Controller
         return view('work', ['work' => $work, 'pictures' => $pictures]);
     }
 
+    public function delete(Work $work)
+    {
+        $work->delete();
+        return redirect()->back();
+    }
+
     protected function getWorksFromYear($year)
     {
         $works = Work::getWorksFromYear($year);

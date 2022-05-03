@@ -8,15 +8,17 @@
         @if(session()->has('message'))
         <p>{{ session()->get('message') }}</p>
         @endif
-        @if(isset($work))
+        @isset($work)
+        <div style="width: 100%; height: 200px; display: flex; align-items: center; justify-content: center;">
+            <img src="{{ $work->thumbnail() }}" style="max-height: 100%; max-width: 100%;" />
+        </div>
         <pre>work {{ json_encode($work, JSON_PRETTY_PRINT) }}</pre>
         <pre>pictures {{ json_encode($work->getPictures(), JSON_PRETTY_PRINT) }}</pre>
+        @endisset
+        @if(session()->has('picture'))
+        <pre>added {{ json_encode(session()->get('picture'), JSON_PRETTY_PRINT) }}</pre>
         @endif
-        @if(isset($picture))
-        {{-- post --}}
-        <pre>added {{ json_encode($picture, JSON_PRETTY_PRINT) }}</pre>
-        @endif
-        {{-- get --}}
+        @auth
         {{-- file을 받기 위해서 enctype을 form-data로 설정해줘야 합니다 --}}
         <form method="POST" enctype="multipart/form-data">
             @csrf
@@ -27,6 +29,7 @@
         @error('picture')
             <p>{{ $message }}</p>
         @enderror
+        @endauth
     </div>
 </section>
 @endsection

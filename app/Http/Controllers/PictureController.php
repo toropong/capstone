@@ -50,15 +50,17 @@ class PictureController extends Controller
 
     public function deletePicture(Picture $picture)
     {
+        $route = redirect();
         $work = $picture->getWork();
-        if ($picture->delete()) {
-            return redirect()
-                ->route('product', ['work' => $work])
-                ->with('message', 'Picture successfully deleted');;
-        } else {
-            return $this->showForm($work)
-                ->with('message', 'Picture delete failed');
-        }
+        if ($work)
+            $route = $route->route('product', ['work' => $work]);
+        else
+            $route = $route->route('work', ['year' => $picture->picture_year]);
+        if ($picture->delete())
+            $route = $route->with('message', 'Picture successfully deleted');
+        else
+            $route = $route->with('message', 'Picture delete failed');
+        return $route;
     }
 
     protected function fileRules()

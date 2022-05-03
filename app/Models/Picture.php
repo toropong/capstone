@@ -82,7 +82,7 @@ class Picture extends Model
      */
     public function getPath()
     {
-        return $this->public_path() . $this->file_name;
+        return self::public_path() . $this->file_name;
     }
 
     /**
@@ -91,15 +91,8 @@ class Picture extends Model
      */
     public function getWork()
     {
-        return $this->belongsTo(Work::class, 'work_no')->get()->first();
-    }
-
-    // 기존 Model 클래스 메소드들을 오버라이딩합니다
-    // delete 메소드는 이벤트로 대체될 수 있습니다
-    public function delete()
-    {
-        // DB에서 picture row를 삭제하기 전에 해당 파일을 삭제합니다
-        Storage::delete($this->storage_path() . $this->file_name);
-        return parent::delete();
+        return $this->belongsTo(Work::class, 'work_no')
+            ->get()
+            ->first();
     }
 }
