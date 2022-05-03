@@ -90,7 +90,7 @@ class Picture extends Model
      */
     public function getWork()
     {
-        return $this->belongsTo(Work::class, 'work_no');
+        return $this->belongsTo(Work::class, 'work_no')->get()->first();
     }
 
     // 기존 Model 클래스 메소드들을 오버라이딩합니다
