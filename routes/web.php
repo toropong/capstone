@@ -68,6 +68,8 @@ Route::get('/manage', [ManageController::class, 'index'])->name('manage');
 //작품 등록
 Route::get('/manage/register', [ManageController::class, 'index']);
 Route::post('/manage/update/{no}', [ManageController::class, 'update']);
+//삭제버튼없음
+Route::post('/manage/delete/{no}',  [ManageController::class, 'delete']);
 
 Route::get('/product', function () {
   return view('product');

@@ -17,6 +17,7 @@ class Work extends Model
      * @var array<int, string>
      */
     protected $fillable = [
+        'no',
         'year',
         'title',
         'cont',
