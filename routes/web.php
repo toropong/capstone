@@ -24,9 +24,6 @@ use App\Http\Controllers\WorkController;
 function test()
 {
   Route::middleware('auth')->group(function () {
-    // 작품 삭제
-    Route::match(['get', 'post'], '/manage/delete/{work}', [WorkController::class, 'delete'])
-      ->name('work.delete');
     // picture 추가
     Route::post('/product/{work}', [PictureController::class, 'processPicture']);
     // picture 제거
@@ -51,7 +48,6 @@ Route::get('/', [MainController::class, 'index'])->name('main');
 
 Route::post('/update', [MainController::class, 'update']);
 
-
 // 년도에 따른 작품 목록 표시
 Route::get('/work/{year}', [WorkController::class, 'index'])
   ->name('work');
@@ -63,6 +59,9 @@ Route::get('/work/{year}/{sequence}', [WorkController::class, 'showProduct'])
 //   ->name('product');
 Route::get('/product/{work}', [WorkController::class, 'product'])
   ->name('product');
+// 작품 삭제
+Route::match(['get', 'post'], '/manage/delete/{work}', [WorkController::class, 'delete'])
+  ->name('work.delete');
 
 // 관리자 페이지
 Route::get('/manage', [ManageController::class, 'index'])->name('manage');
@@ -78,7 +77,7 @@ Route::get('/product', function () {
 });
 
 // 기능 테스트
-test();
+// test();
 
 /**
  * Auth의 라우팅 기능들 중 필요한것만 가져옵니다.
