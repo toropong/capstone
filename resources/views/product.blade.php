@@ -18,16 +18,16 @@
         <div class="container px-4 px-lg-5">
             <!-- Heading Row-->
             <div class="row gx-4 gx-lg-5 align-items-center my-5">
-                <div class="col-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0" src="http://media1.or.kr/wp-content/uploads/2019/08/url-696x444.jpg" alt="..." /></div>
+                <div class="col-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0" src="{{ $work->thumbnail() }}" alt="..." /></div>
                 <div class="col-lg-5">
-                    <h1 class="font-weight-light">작품이름</h1>
+                    <h1 class="font-weight-light">{{ $work->title }}</h1>
                     <p>팀원, 팀명</p>
                     <a class="btn btn-primary" href="#!">소스코드 보기</a>
                 </div>
             </div>
             <!-- Call to Action-->
             <div class="card text-white bg-secondary my-5 py-4 text-center">
-                <div class="card-body"><p class="text-white m-0">작품소개에 관한 글</p></div>
+                <div class="card-body"><p class="text-white m-0">{{ $work->cont }}</p></div>
             </div>
             <!-- Content Row-->
             <div class="row gx-4 gx-lg-5">

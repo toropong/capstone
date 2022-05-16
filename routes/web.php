@@ -23,17 +23,6 @@ use App\Http\Controllers\WorkController;
 
 function test()
 {
-  // 년도에 따른 작품 목록 표시
-  Route::get('/work/{year}', [WorkController::class, 'index'])
-    ->name('work');
-  // 작품 순서에 따른 작품 상세정보 표시
-  Route::get('/work/{year}/{sequence}', [WorkController::class, 'showProduct'])
-    ->name('work.product');
-  // 작품 ID(no)에 따른 작품 상세정보 표시
-  // Route::get('/product/{work}', [WorkController::class, 'product'])
-  //   ->name('product');
-  Route::get('/product/{work}', [PictureController::class, 'showForm'])
-    ->name('product');
   Route::middleware('auth')->group(function () {
     // 작품 삭제
     Route::match(['get', 'post'], '/manage/delete/{work}', [WorkController::class, 'delete'])
@@ -61,6 +50,19 @@ Route::get('/index', [IndexController::class, 'index'])->name('index');
 Route::get('/', [MainController::class, 'index'])->name('main');
 
 Route::post('/update', [MainController::class, 'update']);
+
+
+// 년도에 따른 작품 목록 표시
+Route::get('/work/{year}', [WorkController::class, 'index'])
+  ->name('work');
+// 작품 순서에 따른 작품 상세정보 표시
+Route::get('/work/{year}/{sequence}', [WorkController::class, 'showProduct'])
+  ->name('work.product');
+// 작품 ID(no)에 따른 작품 상세정보 표시
+// Route::get('/product/{work}', [WorkController::class, 'product'])
+//   ->name('product');
+Route::get('/product/{work}', [WorkController::class, 'product'])
+  ->name('product');
 
 // 관리자 페이지
 Route::get('/manage', [ManageController::class, 'index'])->name('manage');

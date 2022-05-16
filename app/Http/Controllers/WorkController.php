@@ -11,7 +11,7 @@ class WorkController extends Controller
     public function index($year)
     {
         $works = $this->getWorksFromYear($year);
-        return view('work', ['works' => $works, 'year' => $year]);
+        return view('index', ['works' => $works, 'year' => $year]);
     }
 
     public function showProduct($year, $sequence)
@@ -29,7 +29,7 @@ class WorkController extends Controller
     public function product(Work $work)
     {
         $pictures = Picture::getPicturesFromWork($work);
-        return view('work', ['work' => $work, 'pictures' => $pictures]);
+        return view('product', ['work' => $work, 'pictures' => $pictures]);
     }
 
     public function delete(Work $work)
