@@ -17,7 +17,7 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name')->comment('이름');
-            $table->string('user_id')->unique()->comment('아이디')->default('');
+            $table->string('user_id')->comment('아이디')->default('');
             $table->string('age')->comment('나이')->default('');
             $table->string('email')->comment('이메일');
             $table->unsignedInteger('user_level')->comment('권한')->default(0);
