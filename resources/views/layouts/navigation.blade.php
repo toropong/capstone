@@ -104,8 +104,8 @@
     function checkFile(el){
       $('#image-session').attr('src', '#');
       var file = el.files;
-      if(file[0].size > 1024 * 1024 * 2){
-        alert('2MB 이하 파일만 등록할 수 있습니다.\n\n' +
+      if(file[0].size > 1024 * 1024 * 100){
+        alert('100MB 이하 파일만 등록할 수 있습니다.\n\n' +
         '현재파일 용량 : ' + (Math.round(file[0].size / 1024 / 1024 * 100) / 100) + 'MB');
         el.outerHTML = el.outerHTML;
       }
