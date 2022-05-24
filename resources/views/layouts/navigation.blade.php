@@ -35,7 +35,7 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="/manage/update/{no}" method="POST"  class="qwe" name="worksform" id="worksform" accept-charset="utf-8" enctype="multipart/form-data" onsubmit="return check();" >
+                <form action="{{ route('work.add') }}" method="POST"  class="qwe" name="worksform" id="worksform" accept-charset="utf-8" enctype="multipart/form-data" onsubmit="return check();" >
                     {{csrf_field()}}
                     <input type="hidden" name="no" id="no" value="">
                     <div class="a">
@@ -72,7 +72,7 @@
                     <input type="file" onchange="checkFile(this);" id="real-input" name="picture" class="image_inputType_file" accept="image*/">
                  
                     <div class="c">
-                           <textarea></textarea>학년도
+                           <input type="text" name="year" />학년도
                               
                               
                     </div>

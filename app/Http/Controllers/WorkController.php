@@ -38,6 +38,23 @@ class WorkController extends Controller
         return redirect()->back();
     }
 
+    public function add(Request $request)
+    {
+        $request->validate([
+            'title' => ['required', 'string'],
+            'cont' => ['required', 'string'],
+            'year' => ['required', 'string'],
+            'picture' => ['required', 'image', 'max:102400'],
+        ]);
+        $work = Work::create([
+            'title' => $request['title'],
+            'cont' => $request['cont'],
+            'year' => $request['year'],
+        ]);
+        Picture::addPictureToWork($work, $request->file('picture'));
+        return redirect()->route('product', ['work'=>$work]);
+    }
+
     protected function getWorksFromYear($year)
     {
         $works = Work::getWorksFromYear($year);

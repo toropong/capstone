@@ -23,6 +23,16 @@ use App\Http\Controllers\WorkController;
 
 function test()
 {
+  //작품 등록
+  Route::get('/manage/register', [ManageController::class, 'index']);
+  Route::post('/manage/update/{no}', [ManageController::class, 'update']);
+  //삭제버튼없음
+  Route::post('/manage/delete/{no}',  [ManageController::class, 'delete']);
+
+  Route::get('/product', function () {
+    return view('product');
+  });
+  
   Route::middleware('auth')->group(function () {
     // picture 추가
     Route::post('/product/{work}', [PictureController::class, 'processPicture']);
@@ -62,19 +72,13 @@ Route::get('/product/{work}', [WorkController::class, 'product'])
 // 작품 삭제
 Route::match(['get', 'post'], '/manage/delete/{work}', [WorkController::class, 'delete'])
   ->name('work.delete');
+// 작품 추가
+Route::post('/manage/add', [WorkController::class, 'add'])
+->name('work.add');
 
 // 관리자 페이지
 Route::get('/manage', [ManageController::class, 'index'])->name('manage');
 
-//작품 등록
-Route::get('/manage/register', [ManageController::class, 'index']);
-Route::post('/manage/update/{no}', [ManageController::class, 'update']);
-//삭제버튼없음
-Route::post('/manage/delete/{no}',  [ManageController::class, 'delete']);
-
-Route::get('/product', function () {
-  return view('product');
-});
 
 // 기능 테스트
 // test();
