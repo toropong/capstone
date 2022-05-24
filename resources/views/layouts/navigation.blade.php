@@ -72,11 +72,8 @@
                     <input type="file" onchange="checkFile(this);" id="real-input" name="picture" class="image_inputType_file" accept="image*/">
                  
                     <div class="c">
-                        <select name="year">
-                            @foreach(App\Models\Work::getYears() as $year)
-                            <option> 
-                                {{ $year }} 학년도
-                                @endforeach
+                           <textarea></textarea>학년도
+                              
                               
                     </div>
                     <div class="postbutton">
