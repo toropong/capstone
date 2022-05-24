@@ -30,7 +30,7 @@
                 <div class="card-body"><p class="text-white m-0">{{ $work->cont }}</p></div>
             </div>
             <!-- Content Row-->
-            <div class="row gx-4 gx-lg-5">
+            {{-- <div class="row gx-4 gx-lg-5">
                 <div class="col-md-4 mb-5">
                     <div class="card h-100">
                         <div class="card-body">
@@ -58,7 +58,7 @@
                         <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">보러가기</a></div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
         <!-- Footer-->
         <footer class="py-5 bg-dark">
