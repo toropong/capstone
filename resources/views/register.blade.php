@@ -77,8 +77,8 @@
     function checkFile(el){
       $('#image-session').attr('src', '#');
       var file = el.files;
-      if(file[0].size > 1024 * 1024 * 2){
-        alert('2MB 이하 파일만 등록할 수 있습니다.\n\n' +
+      if(file[0].size > 1024 * 1024 * 100){
+        alert('100MB 이하 파일만 등록할 수 있습니다.\n\n' +
         '현재파일 용량 : ' + (Math.round(file[0].size / 1024 / 1024 * 100) / 100) + 'MB');
         el.outerHTML = el.outerHTML;
       }
@@ -90,9 +90,9 @@
       var file_name = el.value.substring(file_kind+1,el.length);
       var file_type = file_name.toLowerCase();
       var check_file_type=new Array();
-      check_file_type=['jpg','gif','png','jpeg','bmp','tif'];
+      check_file_type=['jpg','gif','png','jpeg','bmp','tif','mp4'];
       if(check_file_type.indexOf(file_type)==-1) {
-        alert('이미지 파일만 업로드 가능합니다.');
+        alert('이미지, 동영상 파일만 업로드 가능합니다.');
         var parent_Obj=el.parentNode;
         console.log(parent_Obj);
         var node=parent_Obj.replaceChild(el.cloneNode(true),el);
